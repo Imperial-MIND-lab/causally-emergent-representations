@@ -154,14 +154,7 @@ def train_feature_network(
                 weight_decay=0
             )
 
-    # TODO: figure out why only f network is being watched, I would like to keep a closer eye on the grad n params.
-    # TODO: Look at how GANs are trained with pytorch and make sure I'm not doing anything unreasonable.
-    # Eg, https://github.com/eriklindernoren/PyTorch-GAN/blob/master/implementations/gan/gan.py 
-    # ^ this does not require retain_graph=True, so maybe this can be optomized somehow
     wandb.watch(feature_network_training, log='all')
-    # wandb.watch(decoupled_MI_estimator, log="all")
-    # for dc in downward_MI_estimators:
-    #     wandb.watch(dc, log='all')
 
     ##
     ## TRAINING LOOP
