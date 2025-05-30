@@ -16,10 +16,28 @@ The key innovation is an end-to-end differentiable architecture that can learn m
 weights and biases (https://wandb.ai) is used to log experimental results so a wandb account is needed
 
 ### Installation
-bash
+```bash
 git clone [repository-url]
 cd [repository-name]
+pip install -r requirements.txt
 pip install -e .
+```
+
+### Dataset Setup
+
+The datasets used in this research are hosted on Zenodo. To set up the datasets:
+
+1. Install the required packages for data download:
+```bash
+pip install requests tqdm
+```
+
+2. Run the data download script:
+```bash
+python data/download_data.py
+```
+
+This will download and organize all necessary datasets in the `data/` directory. For more details about the datasets and their structure, see `data/README.md`.
 
 ## Code Structure
 
